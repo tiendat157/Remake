@@ -1,6 +1,6 @@
 ﻿@using HelperExtensionNameSpace
 @{
-    ViewBag.Title = "Trang Chủ";
+    ViewBag.Title = " Home ";
     Layout = "~/Views/Layout/HomeLayout.cshtml";
 }
 @{
@@ -29,15 +29,15 @@
                             },
                             dataType: 'html',
                             success: function (response) {
-                                $.notify("Đã thêm sản phẩm vào giỏ hàng!", "success");
+                                $.notify("success");
                                 $("#DivCart").html(response);
                             }
                         });
                     }
                     else {
                         swal({
-                            title: "Thông báo",
-                            text: "Số lượng sản phẩm đã hết!",
+                            title: "Note",
+                            text: "waiting for a response",
                             icon: "warning",
                             timer: 1500
                         });
@@ -51,43 +51,6 @@
 <div class="banner">
     <div class="container">
         <div class="banner-text">
-            <div class="col-sm-5 banner-left wow fadeInLeft animated" data-wow-delay=".5s">
-                <h2>Đăng ký ngay tài khoản</h2>
-                <h4>Nhận mã giả giá 10% và 1 lần quay trúng thưởng</h4>
-                <div class="count main-row">
-                    <ul id="example">
-                        <li><span class="hours">00</span><p class="hours_text">Giờ</p></li>
-                        <li><span class="minutes">00</span><p class="minutes_text">Phút</p></li>
-                        <li><span class="seconds">00</span><p class="seconds_text">Giây</p></li>
-                    </ul>
-                    <div class="clearfix"> </div>
-                    <script type="text/javascript" src="~/Content/js/jquery.countdown.min.js"></script>
-                    <script type="text/javascript">
-                        $('#example').countdown({
-                            date: '06/30/2023 15:59:59',
-                            offset: -8,
-                            day: 'Day',
-                            days: 'Days'
-                        }, function () {
-                            //alert('Done!');
-                        });
-                    </script>
-                </div>
-            </div>
-            <div class="col-sm-7 banner-right wow fadeInRight animated" data-wow-delay=".5s">
-                <section class="slider grid">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            @foreach (var item in productsDiscount)
-                            {
-                                <li>
-                                    <h4>-@item.Discount%</h4>
-                                    <a href="/san-pham/@item.SEOKeyword-@item.ID"><img src="~/Content/images/@item.Image1" alt="" style="width:120px;height:180px;"></a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </section>
                 <!--FlexSlider-->
                 <script defer src="~/Content/js/jquery.flexslider.js"></script>
                 <script type="text/javascript">
@@ -111,7 +74,7 @@
 <div class="new">
     <div class="container">
         <div class="title-info wow fadeInUp animated" data-wow-delay=".5s">
-            <h3 class="title" style="font-family:'UTM Nyala'">Sản Phẩm <span>Mới</span></h3>
+            <h3 class="title" style="font-family:'UTM Nyala'">NEW <span>APARTMENT</span></h3>
         </div>
         <div class="new-info">
             @{
@@ -159,7 +122,7 @@
 <div class="gallery">
     <div class="container">
         <div class="title-info wow fadeInUp animated" data-wow-delay=".5s">
-            <h3 class="title">Sản Phẩm<span> Bán Chạy</span></h3>
+            <h3 class="title"><span>HOT</span></h3>
         </div>
         <div class="gallery-info">
             @foreach (var item in products)
@@ -188,7 +151,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -205,7 +168,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -222,7 +185,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -239,7 +202,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -256,7 +219,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -273,7 +236,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>
@@ -290,7 +253,7 @@
                         <div class="gallery-text simpleCart_shelfItem">
                             <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID">@item.Name </a></h5>
                             <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
-                            <h4 class="sizes">Đã bán: @item.PurchasedCount</h4>
+                            <h4 class="sizes">@item.PurchasedCount</h4>
                             <ul>
                                 <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
                                 <li><span class="glyphicon glyphicon glyphicon-shopping-cart AddItemCart" aria-hidden="true" data-id="@item.ID" style="cursor:pointer"></span></li>

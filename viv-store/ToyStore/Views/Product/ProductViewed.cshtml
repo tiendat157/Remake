@@ -1,6 +1,6 @@
 ﻿@model PagedList.IPagedList<SourceCode.Models.Product>
 @using PagedList.Mvc;
-@{ ViewBag.Title = "Sản Phẩm Đã Xem";
+@{ ViewBag.Title = "Viewed products";
     Layout = "~/Views/Layout/ProductLayout.cshtml"; }
 @if (TempData["DeleteHistoryView"] != null)
 {
@@ -18,7 +18,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Trang Chủ</a></li>
+            <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home </a></li>
             <li class="active">Lịch Sử</li>
         </ol>
     </div>
@@ -29,7 +29,7 @@
     <div class="container">
         @if (Model.Count() > 0)
         {
-            <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Lịch Sử Xem Sản Phẩm</h3>
+            <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Product View History</h3>
             <div class="cart-header wow fadeInUp animated" data-wow-delay=".5s">
                 @Html.ActionLink("Xóa Lịch Sử", "DeleteHistoryView", "Product")
             </div> foreach (var item in Model)
@@ -52,7 +52,7 @@
         }
         else
         {
-            <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Chưa Có Lịch Sử Xem Sản Phẩm</h3>            }
+    <h3 class="wow fadeInUp animated" data-wow-delay=".5s"> No Product View History    </h3>            }
         <div id='Paging' style="text-align: center">
             @Html.PagedListPager(Model, page => Url.Action("ProductViewed", new { ID = ViewBag.GenderID, page }))
         </div>

@@ -3,9 +3,9 @@
     <a href="@Url.Action("Details","Product",new { ID=Model.ID})"><img src="@Url.Content("~/Content/images/"+Model.Image1)" style="height:250px;width:300px" class="img-responsive" alt="item" /></a>
     <div class="new-text">
         <ul>
-            <li><a href="/san-pham/@Model.SEOKeyword-@Model.ID">Xem Chi Tiết </a></li>
-            <li><a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a></li>
-            @*<li class="Add">@Ajax.ActionLink("Thêm Vào Giỏ", "AddItemCart", "Cart", new { ID = Model.ID, @class = "item_add" }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "DivCart", InsertionMode = InsertionMode.Replace }, new { @class="AddItemCart"})</li>*@
+            <li><a href="/san-pham/@Model.SEOKeyword-@Model.ID">See more... </a></li>
+            <li><a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a></li>
+            @*<li class="Add">@Ajax.ActionLink("Add list", "AddItemCart", "Cart", new { ID = Model.ID, @class = "item_add" }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "DivCart", InsertionMode = InsertionMode.Replace }, new { @class="AddItemCart"})</li>*@
         </ul>
     </div>
 </div>

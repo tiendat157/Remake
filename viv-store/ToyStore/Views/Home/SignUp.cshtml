@@ -17,7 +17,7 @@
 
         function validatePassword() {
             if (password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Nhập lại mật khẩu chưa trùng khớp!");
+                confirm_password.setCustomValidity("Re-enter the password that does not match!");
             } else {
                 confirm_password.setCustomValidity('');
             }
@@ -31,8 +31,8 @@
 <div class="breadcrumbs">
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Trang Chủ</a></li>
-            <li class="active">Đăng Ký</li>
+            <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Register</li>
         </ol>
     </div>
 </div>
@@ -41,7 +41,7 @@
 <!--login-->
 <div class="login-page">
     <div class="title-info wow fadeInUp animated" data-wow-delay=".5s">
-        <h3 class="title">Đăng Ký</h3>
+        <h3 class="title">Register</h3>
     </div>
     <div class="widget-shadow">
         <div class="login-body wow fadeInUp animated" data-wow-delay=".7s">
@@ -50,27 +50,27 @@
                 if (Model != null)
                 {
                     <p class="text-danger">@ViewBag.MessageUsername</p>
-                    <input type="text" class="user" name="FullName" placeholder="Họ tên" value="@Model.FullName" required maxlength="30">
+                    <input type="text" class="user" name="FullName" placeholder="Full Name" value="@Model.FullName" required maxlength="30">
                     <span id='message'></span>
                     <p class="text-danger">@ViewBag.MessageEmail</p>
-                    <input type="text" class="user" name="Email" placeholder="Email của bạn" value="@Model.Email" required pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" title="Nhập vào đúng đinh dạng mail của bạn (vd: abc@gmail.com)">
-                    <input type="password" id="Password" name="Password" value="@Model.Password" class="lock" placeholder="Mật Khẩu" pattern=".{8,}" required title="Mật khẩu phải từ 8 ký tự trở lên!">
-                    <input type="password" id="confirm_password" name="confirm_password" class="lock" placeholder="Nhập lại mật Khẩu" pattern=".{8,}" required title="Mật khẩu phải từ 8 ký tự trở lên!">
+                    <input type="text" class="user" name="Email" placeholder="Your email..." value="@Model.Email" required pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" title="Enter your correct email format (vd: abc@gmail.com)">
+                    <input type="password" id="Password" name="Password" value="@Model.Password" class="lock" placeholder="password" pattern=".{8,}" required title="Password must be 8 characters or more!">
+                    <input type="password" id="confirm_password" name="confirm_password" class="lock" placeholder="confirm password" pattern=".{8,}" required title="Password must be 8 characters or more!">
                     <p class="text-danger">@ViewBag.MessagePhoneNumber</p>
-                    <input type="text" class="user" id="phonenumber" name="PhoneNumber" placeholder="Số điện thoại" value="@Model.PhoneNumber" pattern=".{10,12}" required title="Số điện thoại phải từ 10 đến 12 số!">
-                    <input type="text" class="user" name="Address" placeholder="Địa chỉ" value="@Model.Address" required maxlength="200">
-                    <input type="submit" id="btnSignIn" name="Sign In" value="Đăng Ký">
+                    <input type="text" class="user" id="phonenumber" name="PhoneNumber" placeholder="number phone" value="@Model.PhoneNumber" pattern=".{10,12}" required title="Phone number must be between 10 and 12 digits!">
+                    <input type="text" class="user" name="Address" placeholder="Address" value="@Model.Address" required maxlength="200">
+                    <input type="submit" id="btnSignIn" name="Sign In" value="Register">
                 }
                 else
                 {
-                    <input type="text" class="user" name="FullName" placeholder="Họ tên" required maxlength="30">
+                    <input type="text" class="user" name="FullName" placeholder="full name" required maxlength="30">
                     <span id='message'></span>
-                    <input type="text" class="user" name="Email" placeholder="Email của bạn" required pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" title="Nhập vào đúng đinh dạng mail của bạn (vd: abc@gmail.com)">
-                    <input type="password" id="Password" name="Password" class="lock" placeholder="Mật Khẩu" pattern=".{8,}" required title="Mật khẩu phải từ 8 ký tự trở lên!">
-                    <input type="password" id="confirm_password" name="confirm_password" class="lock" placeholder="Nhập lại mật Khẩu" pattern=".{8,}" required title="Mật khẩu phải từ 8 ký tự trở lên!">
-                    <input type="text" class="user" id="phonenumber" name="PhoneNumber" placeholder="Số điện thoại" pattern=".{10,12}" required title="Số điện thoại phải từ 10 đến 12 số!">
-                    <input type="text" class="user" name="Address" placeholder="Địa chỉ" required maxlength="200">
-                    <input type="submit" id="btnSignIn" name="Sign In" value="Đăng Ký">
+                    <input type="text" class="user" name="Email" placeholder="Your email..." required pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" title="Enter your correct email format(vd: abc@gmail.com)">
+                    <input type="password" id="Password" name="Password" class="lock" placeholder="password" pattern=".{8,}" required title="Password must be 8 characters or more!!">
+                    <input type="password" id="confirm_password" name="confirm_password" class="lock" placeholder="confirm password" pattern=".{8,}" required title="Password must be 8 characters or more!">
+                    <input type="text" class="user" id="phonenumber" name="PhoneNumber" placeholder="number phone" pattern=".{10,12}" required title="Phone number must be between 10 and 12 digits!">
+                    <input type="text" class="user" name="Address" placeholder="Address" required maxlength="200">
+                    <input type="submit" id="btnSignIn" name="Sign In" value="Register">
                 }
             }
         </div>

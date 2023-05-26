@@ -39,13 +39,13 @@
                             },
                             dataType: 'html',
                             success: function (response) {
-                                $.notify("Đã thêm sản phẩm vào giỏ hàng!", "success");
+                                $.notify("Product added to cart!", "success");
                                 $("#DivCart").html(response);
                             }
                         });
                     }
                     else {
-                        $.notify("Số lượng sản phẩm đã hết!", "warn");
+                        $.notify("Products are sold out!", "warn");
                     }
                 }
             });
@@ -150,8 +150,8 @@
 <div class="breadcrumbs">
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Trang Chủ</a></li>
-            <li class="active">Sản Phẩm</li>
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home </a></li>
+            <li class="active">Product</li>
         </ol>
     </div>
 </div>
@@ -208,22 +208,16 @@
                 <h6 class="item_price">@Model.PromotionPrice.ToString("#,##")₫</h6>
                 <div class="clearfix"> </div>
                 <div class="quantity">
-                    <p class="qty"> Lượt xem :</p> @Model.ViewCount
+                    <p class="qty"> Views :</p> @Model.ViewCount
                 </div>
                 <div class="quantity">
-                    <p class="qty"> Thương Hiệu :</p> @Model.Producer.Name
+                    <p class="qty"> bedrooms :</p> @Model.PurchasedCount
                 </div>
-                <div class="quantity">
-                    <p class="qty"> Lứa Tuổi :</p> @Model.Age.Name
-                </div>
-                <div class="quantity">
-                    <p class="qty"> Kho :</p> @Model.Quantity
-                </div>
-                <div class="quantity">
-                    <p class="qty"> Đã bán :</p> @Model.PurchasedCount
+                <div>
+                    <p>Address: HaNoi, Viet Nam</p>
                 </div>
                 <div class="btn_form">
-                    <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a>
+                    <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
                 </div>
             </div>
             <div class="clearfix"> </div>
@@ -235,13 +229,30 @@
                     <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Mô tả
+                                Describe
                             </a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                            @Model.Description
+                            <!--Description -->
+                            <div>
+                                <h5>
+                                    <strong>Description Information</strong>
+                                </h5>
+                                <p>Update shopping cart for rent River Thu Thiem in May with many exclusive apartments with beautiful view, best price on the market today. Various shopping carts 1 bedroom from 17 million, 2 bedrooms from 21 million, 3 bedrooms from 31 million / month</p>
+                                <p>Commitment to the right price - right apartment - 100% real picture.</p>
+                                <p>
+                                    - 1 bedroom apartment: 64m².
+                                    + Basic furniture: 17 million / month - 19 million / month (curtain, kitchen, air conditioner, wardrobe, large shoe cabinet, refrigerator).
+                                    + Full furniture: 23 million / month - 25 million / month.
+                                </p>
+                                <p>
+                                    - 2 bedroom apartment (acreage 85m² - 94m²).
+                                    + Basic furniture: 21 million / month - 24 million / month.
+                                    + Full furniture: 27 million / month - 35 million / month.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -251,10 +262,10 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 @if (ratings.Count() > 0)
                                 {
-                                    <span>Đánh Giá (@ratings.Count())</span> }
+                                    <span>Rate (@ratings.Count())</span> }
                                 else
                                 {
-                                    <span>Đánh Giá</span>}
+                                    <span>Rate</span>}
                             </a>
                         </h4>
                     </div>
@@ -286,7 +297,7 @@
                             }
                             else
                             {
-                                <p>Chưa có đánh giá</p>}
+                        <p>There are no reviews yet</p>}
                         </div>
                     </div>
                 </div>
@@ -386,7 +397,7 @@
         <!--related-products-->
         <div class="related-products">
             <div class="title-info wow fadeInUp animated" data-wow-delay=".5s">
-                <h3 class="title">Sản Phẩm<span> Cùng Loại</span></h3>
+                <h3 class="title">SAME HOBBY</h3>
             </div>
             <div class="related-products-info">
                 @foreach (var item in products)
@@ -399,9 +410,9 @@
                                 <div class="new-text">
                                     <ul>
                                         <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a>
+                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
                                         </li>
-                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">Xem Chi Tiết </a></li>
+                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">see more...</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -425,9 +436,9 @@
                                 <div class="new-text">
                                     <ul>
                                         <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a>
+                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
                                         </li>
-                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">Xem Chi Tiết </a></li>
+                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -450,9 +461,9 @@
                                 <div class="new-text">
                                     <ul>
                                         <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a>
+                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
                                         </li>
-                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">Xem Chi Tiết </a></li>
+                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -476,9 +487,9 @@
                                 <div class="new-text">
                                     <ul>
                                         <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Thêm vào giỏ</a>
+                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
                                         </li>
-                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">Xem Chi Tiết </a></li>
+                                        <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -508,7 +519,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Chỉnh sửa</h4>
+                <h4 class="modal-title">edit</h4>
             </div>
             <div class="modal-body">
                 @using (Html.BeginForm("EditQuestion", "Product", FormMethod.Post))
@@ -521,8 +532,8 @@
                         <input type="text" class="form-control" name="Question" id="Question">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary btnSave" id="btnSave">Lưu</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-primary btnSave" id="btnSave">save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
                     </div>
                 }
             </div>

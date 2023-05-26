@@ -8,12 +8,12 @@
                 @if (Session["User"] != null && Session["User"] != "")
                 {
                     <p>
-                        <a href="@Url.Action("SignOut","Home")">Đăng xuất </a>
+                        <a href="@Url.Action("SignOut","Home")">Log out</a>
                     </p>
                 }
                 else
                 {
-                    <p>Chào mừng đến với ViV Store <a href="/dang-ky">Đăng ký </a> hoặc <a href="/dang-nhap">Đăng nhập </a></p>
+                    <p>Welcome to the Realtors Portal <a href="/dang-ky">Register</a> or <a href="/dang-nhap">Log in</a></p>
                 }
             </div>
             <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated" data-wow-delay=".5s">
@@ -40,21 +40,18 @@
                         <input type="text" id="UserID" value="@user.ID" hidden />
                         <li><i class="glyphicon glyphicon-user" aria-hidden="true"></i><a href="@Url.Action("Index","User")">@user.FullName</a></li>
                         <br />
-                        <li><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><a href="@Url.Action("CheckoutOrder","User")">Đơn hàng</a></li>
+                        <li><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><a href="@Url.Action("CheckoutOrder","User")">My choice</a></li>
                         <br />
-                        <li><i class="glyphicon glyphicon-gift" aria-hidden="true"></i><a href="@Url.Action("Index","Voucher")">Voucher của tôi</a></li>
+                        <li><i class="glyphicon glyphicon-gift" aria-hidden="true"></i><a href="@Url.Action("Index","Voucher")">Voucher</a></li>
                         <br />
-                        <li><i class="glyphicon glyphicon-dashboard" aria-hidden="true"></i><a href="@Url.Action("ProductViewed","Product")">Lịch sử xem</a></li>
+                        <li><i class="glyphicon glyphicon-dashboard" aria-hidden="true"></i><a href="@Url.Action("ProductViewed","Product")">History</a></li>
                     }
                 </ul>
             </div>
             <div class="nav navbar-nav logo wow zoomIn animated" data-wow-delay=".7s">
-                <h1><a href="/trang-chu">ViV<b>Store</b><span class="tag">Tất cả vì khách hàng thân thương </span> </a></h1>
+                <h1><a href="/trang-chu">REALTORS<b>PORTAL</b><span class="tag">Choose a beautiful house for you</span> </a></h1>
             </div>
             <div class="nav navbar-nav navbar-right header-two-right">
-                <div class="header-right my-account">
-                    <a href="/quay-trung-thuong"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Săn Voucher</a>
-                </div>
                 <div class="header-right cart" id="DivCart">
                     @Html.Action("CartPartial", "Cart")
                 </div>
