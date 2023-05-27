@@ -197,12 +197,9 @@
                         <p>Chưa có đánh giá</p>
                     }
                     <a href="#">Đánh giá sau khi mua hàng</a>
-                </div>
-                @if (Model.PromotionPrice < Model.Price)
-                {
-                    <p class="pric1"><del>@Model.Price.ToString("#,##")₫</del></p>
-                }
-                <h6 class="item_price">@Model.PromotionPrice.ToString("#,##")₫</h6>
+                </div>               
+                <p class="pric1"><h5> Numberphone +84 @Model.PromotionPrice.ToString("#")</h5></p>              
+                <h6 class="item_price">@Model.Price.ToString("#,##")₫</h6>
                 <div class="clearfix"> </div>
                 <div class="quantity">
                     <p class="qty"> Views :</p> @Model.ViewCount
@@ -213,9 +210,11 @@
                 <div>
                     <p>Address: HaNoi, Viet Nam</p>
                 </div>
-                <div class="btn_form">
-                    <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
-                </div>
+                <!---
+                    <div class="btn_form">
+                        <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
+                    </div>
+                -->
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -406,21 +405,14 @@
                                 <a href="/san-pham/@item.SEOKeyword-@item.ID"><img src="@Url.Content("~/Content/images/"+item.Image1)" style="height:250px;width:300px" class="img-responsive" alt="" /></a>
                                 <div class="new-text">
                                     <ul>
-                                        <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
-                                        </li>
                                         <li><a href="/san-pham/@item.SEOKeyword-@item.ID">see more...</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="new-bottom">
                                 <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID" style="width: 200px;display: inline-block;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">@item.Name </a></h5>
-                                <div class="ofr">
-                                    @if (item.Discount > 0)
-                                    {
-                                        <p class="pric1"><del>@item.Price.ToString("#,##")₫</del></p><br />
-                                    }
-                                    <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
+                                <div class="ofr">                                  
+                                    <p><span class="pric1">@item.Price.ToString("#,##")₫</span></p>
                                 </div>
                             </div>
                         </div> counter++;
@@ -432,21 +424,14 @@
                                 <a href="/san-pham/@item.SEOKeyword-@item.ID"><img src="@Url.Content("~/Content/images/"+item.Image1)" style="height:250px;width:300px" class="img-responsive" alt="" /></a>
                                 <div class="new-text">
                                     <ul>
-                                        <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
-                                        </li>
                                         <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="new-bottom">
                                 <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID" style="width: 200px;display: inline-block;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">@item.Name </a></h5>
-                                <div class="ofr">
-                                    @if (item.Discount > 0)
-                                    {
-                                        <p class="pric1"><del>@item.Price.ToString("#,##")₫</del></p><br />
-                                    }
-                                    <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
+                                <div class="ofr">  
+                                    <p><span class="pric1">@item.Price.ToString("#,##")₫</span></p>
                                 </div>
                             </div>
                         </div> counter++;
@@ -457,9 +442,6 @@
                                 <a href="/san-pham/@item.SEOKeyword-@item.ID"><img src="@Url.Content("~/Content/images/"+item.Image1)" style="height:250px;width:300px" class="img-responsive" alt="" /></a>
                                 <div class="new-text">
                                     <ul>
-                                        <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
-                                        </li>
                                         <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
@@ -467,11 +449,8 @@
                             <div class="new-bottom">
                                 <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID" style="width: 200px;display: inline-block;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">@item.Name </a></h5>
                                 <div class="ofr">
-                                    @if (item.Discount > 0)
-                                    {
-                                        <p class="pric1"><del>@item.Price.ToString("#,##")₫</del></p><br />
-                                    }
-                                    <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
+
+                                    <p><span class="pric1">@item.Price.ToString("#,##")₫</span></p>
                                 </div>
                             </div>
                         </div> counter++;
@@ -483,9 +462,6 @@
                                 <a href="/san-pham/@item.SEOKeyword-@item.ID"><img src="@Url.Content("~/Content/images/"+item.Image1)" style="height:250px;width:300px" class="img-responsive" alt="" /></a>
                                 <div class="new-text">
                                     <ul>
-                                        <li>
-                                            <a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a>
-                                        </li>
                                         <li><a href="/san-pham/@item.SEOKeyword-@item.ID">See more... </a></li>
                                     </ul>
                                 </div>
@@ -493,11 +469,7 @@
                             <div class="new-bottom">
                                 <h5><a class="name" href="/san-pham/@item.SEOKeyword-@item.ID" style="width: 200px;display: inline-block;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">@item.Name </a></h5>
                                 <div class="ofr">
-                                    @if (item.Discount > 0)
-                                    {
-                                        <p class="pric1"><del>@item.Price.ToString("#,##")₫</del></p><br />
-                                    }
-                                    <p><span class="item_price">@item.PromotionPrice.ToString("#,##")₫</span></p>
+                                    <p><span class="pric1">@item.Price.ToString("#,##")₫</span></p>
                                 </div>
                             </div>
                         </div>break;

@@ -501,7 +501,6 @@
     <Content Include="Content\home\css\flexslider1.css" />
     <Content Include="Content\home\css\jquery-ui.css" />
     <Content Include="Content\home\css\style.css" />
-    <Content Include="Content\home\images\1.jpg" />
     <Content Include="Content\home\images\ankhuong.png" />
     <Content Include="Content\home\images\b1.png" />
     <Content Include="Content\home\images\b2.png" />
@@ -553,6 +552,7 @@
     <Content Include="Content\images\225981558_527356271930067_3582002851820138652_n.jpg" />
     <Content Include="Content\images\admin.jpg" />
     <Content Include="Content\images\ankhuong.png" />
+    <Content Include="Content\home\images\1.jpg" />
     <Content Include="Content\images\canho1.jpg" />
     <Content Include="Content\images\canho2-2.jpg" />
     <Content Include="Content\images\canho2-3.jpg" />

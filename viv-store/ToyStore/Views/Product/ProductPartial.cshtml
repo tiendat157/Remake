@@ -4,7 +4,6 @@
     <div class="new-text">
         <ul>
             <li><a href="/san-pham/@Model.SEOKeyword-@Model.ID">See more... </a></li>
-            <li><a class="AddItemCart" data-id="@Model.ID" style="cursor:pointer">Add list</a></li>
             @*<li class="Add">@Ajax.ActionLink("Add list", "AddItemCart", "Cart", new { ID = Model.ID, @class = "item_add" }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "DivCart", InsertionMode = InsertionMode.Replace }, new { @class="AddItemCart"})</li>*@
         </ul>
     </div>
@@ -25,15 +24,8 @@
         }
     </div>
     <div class="ofr">
-        @if (Model.Discount > 0)
-        {
-            <p><span class="item_price">@Model.PromotionPrice.ToString("#,##")₫ (-@Model.Discount%)</span></p><br />
-            <p class="pric1"><del>@Model.Price.ToString("#,##")₫</del></p><br />
-        }
-        else
-        {
-            <p><span class="item_price">@Model.Price.ToString("#,##")₫</span></p><br />
-            <p class="pric1">.</p><br />
-        }
+
+            <p class="pric1"><h4>@Model.Price.ToString("#,##")₫</h4></p><br />
+
     </div>
 </div>
